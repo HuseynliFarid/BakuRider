@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "BakuRider(Automatic Taxi System)": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
