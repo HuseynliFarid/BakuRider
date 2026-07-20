@@ -4,8 +4,8 @@ using System.Text;
 
 namespace BakuRider_Automatic_Taxi_System_.CarClass
 {
-    internal class StandartCar
+    internal class StandartCar : Car
     {
-
+        public override decimal PricePerKm => 1.20m;
     }
 }

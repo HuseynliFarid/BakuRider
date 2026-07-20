@@ -6,6 +6,6 @@ namespace BakuRider_Automatic_Taxi_System_.PayingSystem
 {
     internal class Paying
     {
-
+    
     }
 }

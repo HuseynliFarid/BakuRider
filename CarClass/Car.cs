@@ -4,9 +4,11 @@ using System.Text;
 
 namespace BakuRider_Automatic_Taxi_System_.CarClass
 {
-    public class Cars
+    public abstract class Car
     {
-        public string CarModels;
-        public double PricePerKm;   
+        public string? CarModel;
+        public string? CarPlateNumber;
+
+        public abstract decimal PricePerKm { get; }
     }
 }

@@ -6,45 +6,30 @@ using System.Text;
 
 namespace BakuRider_Automatic_Taxi_System_.DriverProperty
 {
-    internal class Driver : User
+    internal class Driver 
     {
-        protected float _rating;
+        private float _rating = 5.0f;
         protected bool _isBusy = false;
-
         public float Rating
         {
             get { return _rating; }
 
             set
             {
-                if(value > 0)
+                if (value < 1.0f)
                 {
-                    _rating = value;
+                    _rating = 1.0f;
                 }
+                else if (value > 5.0f)
+                {
+                    _rating = 5.0f;
+                }
+                else _rating = value;
             }
         }
-        public bool IsBusy
+        public void ShowAllTaxiDrivers()
         {
-            get { return _isBusy; }
-
-            set
-            {
-                if(value == true || value == false)
-                {
-                    _isBusy = value;
-                }
-                else
-                {
-                    Console.WriteLine("IsBusy Cannot be other else only true or false !");
-                }
-            }
-        }
-        public Driver(double balance,string name,float rating,bool isbusy) : base (balance,name)
-        {
-            this.InitialBalance = balance;
-            this.Name = name;
-            Rating = rating;
-            IsBusy = isbusy;
+            Console.WriteLine("null");
         }
     }
 }
