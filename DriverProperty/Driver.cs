@@ -8,6 +8,9 @@ namespace BakuRider_Automatic_Taxi_System_.DriverProperty
 {
     internal class Driver 
     {
+       private  SignUpDriver SignUp = new SignUpDriver();
+       private SignInDriver SignIn = new SignInDriver();
+
         private float _rating = 5.0f;
         protected bool _isBusy = false;
         public float Rating
@@ -31,5 +34,16 @@ namespace BakuRider_Automatic_Taxi_System_.DriverProperty
         {
             Console.WriteLine("null");
         }
+        
+        public void DriverSignUp()
+        {
+            SignUp.SignUp();
+        }  
+        
+        public void DriverSignIn()
+        {
+            //empty....
+        }
+        
     }
 }

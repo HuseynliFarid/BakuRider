@@ -26,8 +26,10 @@ namespace BakuRider_Automatic_Taxi_System_.AdMethods
 
     public class  IDGenerator()
     {
+
         private static Random _random = new Random();
         private const string Chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
         public string TxDriverID()
         {
             string prefix = "AYNA";
