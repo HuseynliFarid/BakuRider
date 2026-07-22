@@ -5,10 +5,7 @@ using System.Transactions;
 
 namespace BakuRider_Automatic_Taxi_System_.AdMethods
 {
-    public class UserMethodName
-    {
-        
-    }
+    
     public class ISnullstring()
     {
         public string Isnullstring(string UserMessage)
@@ -26,19 +23,20 @@ namespace BakuRider_Automatic_Taxi_System_.AdMethods
 
     public class  IDGenerator()
     {
-
         private static Random _random = new Random();
         private const string Chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
         public string TxDriverID()
         {
-            string prefix = "AYNA";
+            string TaxiDriverID = "AYNA";
+           
             char[] randomChars = new char[5];
             for(int i =0;i < randomChars.Length; i++)
             {
                 randomChars[i] = Chars[_random.Next(Chars.Length)];
+                TaxiDriverID = TaxiDriverID + randomChars[i];
             }
-            string TaxiDriverID = prefix + randomChars;
+            
             return TaxiDriverID;
         }
     }

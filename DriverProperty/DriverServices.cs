@@ -4,8 +4,8 @@ using System.Text;
 
 namespace BakuRider_Automatic_Taxi_System_.DriverProperty
 {
-    public class SignInDriver
+    internal class DriverServices
     {
-        
+      
     }
 }

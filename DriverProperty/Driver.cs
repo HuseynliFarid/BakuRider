@@ -3,13 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.Json;
 
 namespace BakuRider_Automatic_Taxi_System_.DriverProperty
 {
-    internal class Driver 
+    public class Driver 
     {
-       private  SignUpDriver SignUp = new SignUpDriver();
-       private SignInDriver SignIn = new SignInDriver();
+       public  SignUpDriver SignUp = new SignUpDriver();
+       public SignInDriver SignIn = new SignInDriver();
 
         private float _rating = 5.0f;
         protected bool _isBusy = false;
@@ -32,7 +33,19 @@ namespace BakuRider_Automatic_Taxi_System_.DriverProperty
         }
         public void ShowAllTaxiDrivers()
         {
-            Console.WriteLine("null");
+            string[] lines = File.ReadAllLines("Drivers.json");
+            foreach (string line in lines)
+            {
+                if (!string.IsNullOrWhiteSpace(line))
+                {
+                    
+                    SignUpDriver? driver = JsonSerializer.Deserialize<SignUpDriver>(line);
+                    if(driver != null)
+                    {
+                        Console.WriteLine($"Name: {driver._firstName}, LastName: {driver._lastName}, Email: {driver._email},DriverID : {driver._driverId},  IdentityCard: {driver._identityCardNumber}");
+                    }
+                }
+            }
         }
         
         public void DriverSignUp()
